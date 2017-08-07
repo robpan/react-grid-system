@@ -8,7 +8,7 @@ const RenderAny = ({ children, style }) => {
   if (typeof children === 'object' && Array.isArray(children)) {
     return <div style={style}>{children}</div>;
   }
-  return <div style={style}>children</div>;
+  return <div style={style}>{children}</div>;
 };
 
 RenderAny.propTypes = {

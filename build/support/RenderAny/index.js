@@ -37,7 +37,7 @@ var RenderAny = function RenderAny(_ref) {
   return _react2.default.createElement(
     'div',
     { style: style },
-    'children'
+    children
   );
 };
 
