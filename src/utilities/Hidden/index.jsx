@@ -72,6 +72,7 @@ export default class Hidden extends React.Component {
   }
 
   render = () => {
+    let style = {};
     if (style.hidden({
       screenClass: this.state.screenClass,
       xs: this.props.xs,
@@ -79,7 +80,11 @@ export default class Hidden extends React.Component {
       md: this.props.md,
       lg: this.props.lg,
       xl: this.props.xl,
-    })) return false;
-    return <RenderAny>{this.props.children}</RenderAny>;
+    })) {
+      style = {
+        display: none,
+      };
+    }
+    return <RenderAny style={style}>{this.props.children}</RenderAny>;
   }
 }

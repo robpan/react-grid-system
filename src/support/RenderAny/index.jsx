@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const RenderAny = ({ children }) => {
+const RenderAny = ({ children, style }) => {
   if (typeof children === 'function') {
-    return children();
+    return <div style={style}>children()</div>;
   }
   if (typeof children === 'object' && Array.isArray(children)) {
-    return <div>{children}</div>;
+    return <div style={style}>{children}</div>;
   }
   return children;
 };
@@ -17,6 +17,7 @@ RenderAny.propTypes = {
     PropTypes.node,
     PropTypes.func,
   ]).isRequired,
+  style: PropTypes.shape({}),
 };
 
 export default RenderAny;
